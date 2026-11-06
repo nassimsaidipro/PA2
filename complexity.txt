@@ -1,0 +1,9 @@
+Time complexity
+Best case: O(n). Worst case: O(n²). (n = length of the string)
+Best case O(n): in a string like ()()(), every ) finds its ( right at the top, so each one costs O(1).
+Worst case O(n²): in a string like *****))))), there is no "(", so every ")" pops all the remaining stars into helper and pushes them back. The costs are about n/2, n/2 − 1, n/2 − 2, and so on, which sums to about n²/8.
+
+Space complexity : O(n)
+- Stack and helper together never hold more than n characters, because helper only borrows items from stack.
+- Doubling the array adds at most a constant factor.
+- There is no recursion, so there is no extra call-stack usage.

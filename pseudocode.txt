@@ -1,0 +1,43 @@
+FUNCTION isValid(s):
+    stack  ← new empty Stack      
+    helper ← new empty Stack    
+
+    FOR each character c in s, left to right:
+
+        IF c is '$':
+            STOP reading
+
+        ELSE IF c is '(' or c is '*':
+            push c onto stack
+
+        ELSE IF c is ')':
+            matched ← false
+
+            
+            WHILE stack is not empty:
+                t ← pop stack
+                IF t is '(':
+                    matched ← true
+                    BREAK
+                push t onto helper        
+
+            IF matched is false:
+                
+                IF helper is empty:
+                    RETURN false         
+                pop helper               
+
+            WHILE helper is not empty:
+                push (pop helper) onto stack
+
+    stars ← 0
+    WHILE stack is not empty:
+        c ← pop stack                     
+        IF c is '*':
+            stars ← stars + 1            
+        ELSE:                            
+            IF stars is 0:
+                RETURN false              
+            stars ← stars - 1             
+
+    RETURN true

@@ -1,0 +1,10 @@
+This is the link
+https://share.gemini.google/Sr7OxMfNV7UO
+
+Difference: 
+(1) The AI version uses recursive backtracking, trying all three meanings of each *. While mine is a iterative approach with a main stack and a helper stack.
+     Processes the string in one pass followed by a final matching phase. It doesn't recursively guess the meaning of wildcards.
+(2) The AI version is exponential in the number of stars and can overflow the call stack. My version is O(n²) at worst.
+
+Accuracy: a tie, since both are correct on everything I tested.
+Efficiency: Our code is more efficient because of the time complexity and it won't overflow. 
